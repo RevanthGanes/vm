@@ -82,6 +82,7 @@ public class StepDef extends BaseClass {
 		btnClick(mailPojo.getSelectPatient());
 		btnClick(mailPojo.getClkChkBox());
 		btnClick(mailPojo.getClkAddPatient());
+		Thread.sleep(100);
 
 	}
 
