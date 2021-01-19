@@ -13,17 +13,18 @@ import com.pojo.HomePage;
 import com.pojo.LoginPage;
 import com.pojo.TestMailPojo;
 import cucumber.api.java.en.*;
+import junit.framework.Assert;
 
 public class StepDef extends BaseClass {
 	LoginPage loginPage;
 	HomePage homePage;
 
-	@Given("user is in login vital engine portal")
+	@Given("User is in login vital engine portal")
 	public void user_is_in_login_vital_engine_portal() {
 
 	}
 
-	@When("user enters valid username and password")
+	@When("User enters valid username and password")
 	public void user_enters_valid_username_and_password() {
 
 		loginPage = new LoginPage();
@@ -33,12 +34,12 @@ public class StepDef extends BaseClass {
 
 	}
 
-	@When("click on submit button")
+	@When("Click on submit button")
 	public void click_on_submit_button() {
 		btnClick(loginPage.getSignIn());
 	}
 
-	@When("user click on new button present in homepage")
+	@When("User click on new button present in homepage")
 	public void user_click_on_new_button_present_in_homepage() throws InterruptedException {
 		homePage = new HomePage();
 		btnClick(homePage.getvMailicon());
@@ -48,7 +49,7 @@ public class StepDef extends BaseClass {
 
 	}
 
-	@When("user add new receiving team and add participants")
+	@When("User add new receiving team and add participants")
 	public void user_add_new_receiving_team_and_add_participants() throws InterruptedException {
 		Thread.sleep(4000);
 		btnClick(homePage.getAddReceivingTeam());
@@ -63,7 +64,7 @@ public class StepDef extends BaseClass {
 		until.click();
 	}
 
-	@When("user adds subject,tags and image")
+	@When("User adds subject,tags and image")
 	public void user_adds_subject_tags_and_image() throws InterruptedException {
 		TestMailPojo mailPojo = new TestMailPojo();
 		insert(mailPojo.getTypeSubject(), "test mail");
@@ -84,7 +85,7 @@ public class StepDef extends BaseClass {
 
 	}
 
-	@When("user upload file and medical records")
+	@When("User upload file and medical records")
 	public void user_upload_file_and_medical_records() throws InterruptedException {
 		FileUpload fileUpload = new FileUpload();
 		btnClick(fileUpload.getAddMedicalRecords());
@@ -93,15 +94,21 @@ public class StepDef extends BaseClass {
 
 		clkChooseFile.sendKeys(System.getProperty("user.dir") + "\\File\\referral.pdf");
 		Thread.sleep(2000);
-		fileUpload.getClkSave().click();;
-		
+		fileUpload.getClkSave().click();
+		;
 
 	}
 
-	@Then("click on create Vmail")
+	@Then("Click on create Vmail")
 	public void click_on_create_Vmail() {
 		FileUpload fileUpload = new FileUpload();
 		btnClick(fileUpload.getClkCreateVmail());
+	}
+
+	@Then("Verify the Subject present in header")
+	public void verify_the_subject_test_mail_present_in_header() {
+		FileUpload fileUpload = new FileUpload();
+		org.junit.Assert.assertTrue(fileUpload.getSubjecTestMail().isDisplayed());
 	}
 
 }

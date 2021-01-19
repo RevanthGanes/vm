@@ -1,6 +1,5 @@
 package com.pojo;
 
-
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -11,6 +10,13 @@ public class FileUpload extends BaseClass {
 
 	public FileUpload() {
 		PageFactory.initElements(driver, this);
+	}
+
+	@FindBy(xpath = "//h4[contains(text(),'Subject')]")
+	private WebElement subjecTestMail;
+
+	public WebElement getSubjecTestMail() {
+		return subjecTestMail;
 	}
 
 	@FindBy(xpath = "//*[@class='pull-right push-10-t']")
@@ -47,8 +53,5 @@ public class FileUpload extends BaseClass {
 	public WebElement getClkCreateVmail() {
 		return clkCreateVmail;
 	}
-
-	
-
 
 }
