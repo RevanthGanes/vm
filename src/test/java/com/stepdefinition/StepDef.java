@@ -46,7 +46,6 @@ public class StepDef extends BaseClass {
 		Thread.sleep(3000);
 		btnClick(homePage.getNewVmail());
 		// btnClick(homePage.getRadioInVitalengine());
-
 	}
 
 	@When("User add new receiving team and add participants")
@@ -82,7 +81,7 @@ public class StepDef extends BaseClass {
 		btnClick(mailPojo.getSelectPatient());
 		btnClick(mailPojo.getClkChkBox());
 		btnClick(mailPojo.getClkAddPatient());
-		
+		Thread.sleep(100);
 
 	}
 
@@ -96,7 +95,6 @@ public class StepDef extends BaseClass {
 		clkChooseFile.sendKeys(System.getProperty("user.dir") + "\\File\\referral.pdf");
 		Thread.sleep(2000);
 		fileUpload.getClkSave().click();
-		;
 
 	}
 
@@ -111,5 +109,4 @@ public class StepDef extends BaseClass {
 		FileUpload fileUpload = new FileUpload();
 		org.junit.Assert.assertTrue(fileUpload.getSubjecTestMail().isDisplayed());
 	}
-
 }

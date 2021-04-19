@@ -23,7 +23,5 @@ public class Hooks extends BaseClass {
 		TakesScreenshot screenshot = (TakesScreenshot) driver;
 		byte[] screenshotAs = screenshot.getScreenshotAs(OutputType.BYTES);
 		sc.embed(screenshotAs, "img.png");
-
 	}
-
 }

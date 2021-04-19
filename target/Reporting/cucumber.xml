@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="85.158386">
-<testcase classname="Vmail Test Automation Workflow" name="Create Vmail and verify the Same" time="85.158386">
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="121.439223">
+<testcase classname="Vmail Test Automation Workflow" name="Create Vmail and verify the Same" time="121.439223">
 <system-out><![CDATA[Given User is in login vital engine portal..................................passed
 When User enters valid username and password................................passed
 And Click on submit button..................................................passed

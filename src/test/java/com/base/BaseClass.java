@@ -17,7 +17,6 @@ public class BaseClass {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 	}
-
 	public void loadUrl(String data) {
 		driver.get(data);
 	}
